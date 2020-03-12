@@ -15,10 +15,17 @@ export default function Routes() {
         screenOptions={{
           headerStyle: {backgroundColor: '#7159c1'},
           headerTintColor: '#fff',
-          headerBackTitleVisible: false,
+          headerTitleStyle: {
+            color: '#fff',
+          },
+          headerTitleAlign: 'center',
         }}>
         <Stack.Screen name="Home" component={Main} />
-        <Stack.Screen name="Notifications" component={User} />
+        <Stack.Screen
+          name="User"
+          component={User}
+          options={({route}) => ({title: route.params.user.name})}
+        />
       </Stack.Navigator>
     </NavigationContainer>
   );
