@@ -11,16 +11,13 @@ export default function Routes() {
   return (
     <NavigationContainer>
       <Stack.Navigator
+        initialRouteName="Home"
         screenOptions={{
           headerStyle: {backgroundColor: '#7159c1'},
           headerTintColor: '#fff',
           headerBackTitleVisible: false,
         }}>
-        <Stack.Screen
-          name="Home"
-          component={Main}
-          options={{title: 'Dashboard'}}
-        />
+        <Stack.Screen name="Home" component={Main} />
         <Stack.Screen name="Notifications" component={User} />
       </Stack.Navigator>
     </NavigationContainer>
